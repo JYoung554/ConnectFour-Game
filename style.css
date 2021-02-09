@@ -1,0 +1,19 @@
+.player {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin: 2.5rem auto;
+}
+
+.game-grid {
+  display: flex;
+  margin: 0.5rem auto;
+  height: 700px;
+  width: 700px;
+  background-color: rgb(2, 2, 116);
+}
+
+.reset {
+  display: flex;
+  justify-content: center;
+}
