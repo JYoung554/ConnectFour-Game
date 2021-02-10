@@ -52,15 +52,57 @@ for (let i = 0; i < topCells.length; i++) {
     // if ()
     //if bottomcells[i].style background = red ,continue to next line:
     //
-    if (row5[i].id !== 'full') {
+    if (row5[i].classList.contains !== 'full') {
       row5[i].style.backgroundColor = `${currentPlayer}`
-      row5[i].id = 'full'
+      row5[i].classList.add('full')
       switchPlayer()
-    } else if (row5[i].id === 'full') {
+      return
+    } else if (row5[i].classList.contains('full')) {
+      console.log('row4')
       row4[i].style.backgroundColor = `${currentPlayer}`
-      row4[i].id = 'full'
+      row4[i].classList.add('full')
       switchPlayer()
+      return
     }
+    // if (row4[i].classList.contains('full')) {
+    //   row4[i].style.backgroundColor = `${currentPlayer}`
+    //   row4[i].classList.add('full')
+    //   switchPlayer()
+    // } else if (row4[i].classList.contains('full')) {
+    //   row3[i].style.backgroundColor = `${currentPlayer}`
+    //   row3[i].classList.add('full')
+    //   switchPlayer()
+    // }
+
+    // if (row3[i].classList.contains('full')) {
+    //   row3[i].style.backgroundColor = `${currentPlayer}`
+    //   row3[i].classList.add('full')
+    //   switchPlayer()
+    // } else if (row3[i].classList.contains('full')) {
+    //   row2[i].style.backgroundColor = `${currentPlayer}`
+    //   row2[i].classList.add('full')
+    //   switchPlayer()
+    // }
+
+    // if (row2[i].classList.contains('full')) {
+    //   row2[i].style.backgroundColor = `${currentPlayer}`
+    //   row2[i].classList.add('full')
+    //   switchPlayer()
+    // } else if (row2[i].classList.contains('full')) {
+    //   row1[i].style.backgroundColor = `${currentPlayer}`
+    //   row1[i].classList.add('full')
+    //   switchPlayer()
+    // }
+
+    // if (row1[i].classList.contains('full')) {
+    //   row1[i].style.backgroundColor = `${currentPlayer}`
+    //   row1[i].id = 'full'
+    //   switchPlayer()
+    // } else if (row1[i].classList.contains('full')) {
+    //   row0[i].style.backgroundColor = `${currentPlayer}`
+    //   row0[i].id = 'full'
+    //   switchPlayer()
+    // }
 
     // if (currentPlayer === 1) {
     //   row5[i].style.backgroundColor = 'red'
@@ -100,7 +142,6 @@ for (let i = 0; i < cells.length; i++) {
 resetButton.addEventListener('click', function () {
   location.reload()
 })
-console.log(dropRow)
 
 // document.querySelector('.switch').addEventListener('click', switchPlayer)
 
