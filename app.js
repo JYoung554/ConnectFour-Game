@@ -4,17 +4,17 @@ const displayCurrentPlayers = document.querySelector('player')
 const grid = document.querySelectorAll('game-grid')
 const cells = document.querySelectorAll('.cell')
 const topCells = document.querySelectorAll('.drop')
-const bottomCells = document.querySelectorAll('.bottom')
+// const row0 = document.querySelectorAll('.bottom')
 const result = document.querySelector('result')
 const resetButton = document.querySelector('.reset')
-let currentPlayer = 1
+let currentPlayer = 'red'
 
 resetButton.style.backgroundColor = 'red'
 
-const cellBottom = document.querySelectorAll('.bottom')
 /////////////////////////////////////////////////////////////////////
 const gameActive = false
 const gameWin = 0
+
 // currentPlayer = topCells[i]
 ///////////////////////////////////////////////////////////////
 
@@ -36,17 +36,60 @@ const column4 = document.querySelectorAll('.col-4')
 const column5 = document.querySelectorAll('.col-5')
 const column6 = document.querySelectorAll('.col-6')
 
+const row0 = document.querySelectorAll('.row-0')
+const row1 = document.querySelectorAll('.row-1')
+const row2 = document.querySelectorAll('.row-2')
+const row3 = document.querySelectorAll('.row-3')
+const row4 = document.querySelectorAll('.row-4')
+const row5 = document.querySelectorAll('.row-5')
+
 const columns = [column0, column1, column2, column3, column4, column5, column6]
 ///////////////////////////////////////////////////////
 //const logic = function () {
 for (let i = 0; i < topCells.length; i++) {
   topCells[i].addEventListener('click', function (c) {
     // if(-7)
-    bottomCells[i].style.backgroundColor = 'red'
-    currentPlayer = 2
+    // if ()
+    //if bottomcells[i].style background = red ,continue to next line:
+    //
+    if (row5[i].id !== 'full') {
+      row5[i].style.backgroundColor = `${currentPlayer}`
+      row5[i].id = 'full'
+      switchPlayer()
+    } else if (row5[i].id === 'full') {
+      row4[i].style.backgroundColor = `${currentPlayer}`
+      row4[i].id = 'full'
+      switchPlayer()
+    }
+
+    // if (currentPlayer === 1) {
+    //   row5[i].style.backgroundColor = 'red'
+    //   currentPlayer === 2
+    //   if (currentPlayer === 2) {
+    //     row5[i].style.backgroundColor = 'blue'
+    //     currentPlayer === 1
+    //   }
+
+    // }
   })
 }
 //}
+// const checkWin = ()=>{
+//   if(checkWin ){
+
+//   }
+
+// }
+
+//if win condition includes
+
+const switchPlayer = () => {
+  if (currentPlayer === 'red') {
+    currentPlayer = 'blue'
+  } else {
+    currentPlayer = 'red'
+  }
+}
 
 for (let i = 0; i < cells.length; i++) {
   cells[i].addEventListener('click', function () {
@@ -58,6 +101,8 @@ resetButton.addEventListener('click', function () {
   location.reload()
 })
 console.log(dropRow)
+
+// document.querySelector('.switch').addEventListener('click', switchPlayer)
 
 //if gameActive click on topcell , bottom will fill with player color and switch player,
 //and hold taken property. if all cells have taken property , game is over. if win combinations met , game is over.
