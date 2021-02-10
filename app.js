@@ -1,11 +1,13 @@
 const playerStyle = document.querySelector('.player')
 playerStyle.style.fontFamily = 'Helvetica, Arial, Sans-Serif'
-const currentPlayer = document.querySelector('player')
+const displayCurrentPlayers = document.querySelector('player')
 const grid = document.querySelectorAll('game-grid')
 const cells = document.querySelectorAll('.cell')
 const topCells = document.querySelectorAll('.drop')
+const bottomCells = document.querySelectorAll('.bottom')
 const result = document.querySelector('result')
 const resetButton = document.querySelector('.reset')
+let currentPlayer = 1
 
 resetButton.style.backgroundColor = 'red'
 
@@ -26,25 +28,25 @@ const dropRow = [
   topCells[6]
 ]
 
+const column0 = document.querySelectorAll('.col-0')
+const column1 = document.querySelectorAll('.col-1')
+const column2 = document.querySelectorAll('.col-2')
+const column3 = document.querySelectorAll('.col-3')
+const column4 = document.querySelectorAll('.col-4')
+const column5 = document.querySelectorAll('.col-5')
+const column6 = document.querySelectorAll('.col-6')
 
-const column0 = 
-
+const columns = [column0, column1, column2, column3, column4, column5, column6]
 ///////////////////////////////////////////////////////
-
-const logic = () => {
-  for (let i = 0; i < topCells.length; i++) {
-    topCells[i].addEventListener('click', function () {
-      if (cells[logic + 7].classList.contains('taken')) {
-        if (currentPlayer === 1) {
-          cells[logic].classList.add('taken')
-          cells[c].classList.add('player1')
-
-
-        }
-      }
-    })
-  }
+//const logic = function () {
+for (let i = 0; i < topCells.length; i++) {
+  topCells[i].addEventListener('click', function (c) {
+    // if(-7)
+    bottomCells[i].style.backgroundColor = 'red'
+    currentPlayer = 2
+  })
 }
+//}
 
 for (let i = 0; i < cells.length; i++) {
   cells[i].addEventListener('click', function () {
@@ -56,6 +58,10 @@ resetButton.addEventListener('click', function () {
   location.reload()
 })
 console.log(dropRow)
+
+//if gameActive click on topcell , bottom will fill with player color and switch player,
+//and hold taken property. if all cells have taken property , game is over. if win combinations met , game is over.
+//
 
 ////////////////////////////////////////////////
 //Add variable that tracks current player
