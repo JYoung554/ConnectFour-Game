@@ -14,6 +14,7 @@ resetButton.style.backgroundColor = 'red'
 /////////////////////////////////////////////////////////////////////
 const gameActive = false
 const gameWin = 0
+let gameState = ['', '', '', '', '', '', '', '', '']
 
 // currentPlayer = topCells[i]
 ///////////////////////////////////////////////////////////////
@@ -44,77 +45,109 @@ const row4 = document.querySelectorAll('.row-4')
 const row5 = document.querySelectorAll('.row-5')
 
 const columns = [column0, column1, column2, column3, column4, column5, column6]
+
 ///////////////////////////////////////////////////////
-//const logic = function () {
-for (let i = 0; i < topCells.length; i++) {
-  topCells[i].addEventListener('click', function (c) {
-    // if(-7)
-    // if ()
-    //if bottomcells[i].style background = red ,continue to next line:
-    //
-    if (row5[i].classList.contains !== 'full') {
-      row5[i].style.backgroundColor = `${currentPlayer}`
-      row5[i].classList.add('full')
-      switchPlayer()
-      return
-    } else if (row5[i].classList.contains('full')) {
-      console.log('row4')
-      row4[i].style.backgroundColor = `${currentPlayer}`
-      row4[i].classList.add('full')
-      switchPlayer()
-      return
-    }
-    // if (row4[i].classList.contains('full')) {
-    //   row4[i].style.backgroundColor = `${currentPlayer}`
-    //   row4[i].classList.add('full')
-    //   switchPlayer()
-    // } else if (row4[i].classList.contains('full')) {
-    //   row3[i].style.backgroundColor = `${currentPlayer}`
-    //   row3[i].classList.add('full')
-    //   switchPlayer()
-    // }
+const logic = function () {
+  for (let i = 0; i < topCells.length; i++) {
+    topCells[i].addEventListener('click', function (c) {
+      // if(-7)
+      // if ()
+      console.log(gameState)
+      //if bottomcells[i].style background = red ,continue to next line:
+      //
+      if (!row5[i].classList.contains('full')) {
+        row5[i].style.backgroundColor = `${currentPlayer}`
+        console.log(row5[i].id)
+        gameState[row5[i].id] = currentPlayer
+        row5[i].classList.add('full')
+        switchPlayer()
+        return
+      } else if (!row4[i].classList.contains('full')) {
+        console.log('row4')
+        row4[i].style.backgroundColor = `${currentPlayer}`
+        row4[i].classList.add('full')
+        switchPlayer()
+        return
+      } else if (!row3[i].classList.contains('full')) {
+        console.log('row3')
+        row3[i].style.backgroundColor = `${currentPlayer}`
+        row3[i].classList.add('full')
+        switchPlayer()
+        return
+      } else if (!row2[i].classList.contains('full')) {
+        console.log('row2')
+        row2[i].style.backgroundColor = `${currentPlayer}`
+        row2[i].classList.add('full')
+        switchPlayer()
+        return
+      } else if (!row1[i].classList.contains('full')) {
+        console.log('row1')
+        row1[i].style.backgroundColor = `${currentPlayer}`
+        row1[i].classList.add('full')
+        switchPlayer()
+        return
+      } else if (!row0[i].classList.contains('full')) {
+        console.log('row0')
+        row0[i].style.backgroundColor = `${currentPlayer}`
+        row0[i].classList.add('full')
+        switchPlayer()
+        return
+      }
 
-    // if (row3[i].classList.contains('full')) {
-    //   row3[i].style.backgroundColor = `${currentPlayer}`
-    //   row3[i].classList.add('full')
-    //   switchPlayer()
-    // } else if (row3[i].classList.contains('full')) {
-    //   row2[i].style.backgroundColor = `${currentPlayer}`
-    //   row2[i].classList.add('full')
-    //   switchPlayer()
-    // }
+      // if (row4[i].classList.contains('full')) {
+      //   row4[i].style.backgroundColor = `${currentPlayer}`
+      //   row4[i].classList.add('full')
+      //   switchPlayer()
+      // } else if (row4[i].classList.contains('full')) {
+      //   row3[i].style.backgroundColor = `${currentPlayer}`
+      //   row3[i].classList.add('full')
+      //   switchPlayer()
+      // }
 
-    // if (row2[i].classList.contains('full')) {
-    //   row2[i].style.backgroundColor = `${currentPlayer}`
-    //   row2[i].classList.add('full')
-    //   switchPlayer()
-    // } else if (row2[i].classList.contains('full')) {
-    //   row1[i].style.backgroundColor = `${currentPlayer}`
-    //   row1[i].classList.add('full')
-    //   switchPlayer()
-    // }
+      // if (row3[i].classList.contains('full')) {
+      //   row3[i].style.backgroundColor = `${currentPlayer}`
+      //   row3[i].classList.add('full')
+      //   switchPlayer()
+      // } else if (row3[i].classList.contains('full')) {
+      //   row2[i].style.backgroundColor = `${currentPlayer}`
+      //   row2[i].classList.add('full')
+      //   switchPlayer()
+      // }
 
-    // if (row1[i].classList.contains('full')) {
-    //   row1[i].style.backgroundColor = `${currentPlayer}`
-    //   row1[i].id = 'full'
-    //   switchPlayer()
-    // } else if (row1[i].classList.contains('full')) {
-    //   row0[i].style.backgroundColor = `${currentPlayer}`
-    //   row0[i].id = 'full'
-    //   switchPlayer()
-    // }
+      // if (row2[i].classList.contains('full')) {
+      //   row2[i].style.backgroundColor = `${currentPlayer}`
+      //   row2[i].classList.add('full')
+      //   switchPlayer()
+      // } else if (row2[i].classList.contains('full')) {
+      //   row1[i].style.backgroundColor = `${currentPlayer}`
+      //   row1[i].classList.add('full')
+      //   switchPlayer()
+      // }
 
-    // if (currentPlayer === 1) {
-    //   row5[i].style.backgroundColor = 'red'
-    //   currentPlayer === 2
-    //   if (currentPlayer === 2) {
-    //     row5[i].style.backgroundColor = 'blue'
-    //     currentPlayer === 1
-    //   }
+      // if (row1[i].classList.contains('full')) {
+      //   row1[i].style.backgroundColor = `${currentPlayer}`
+      //   row1[i].id = 'full'
+      //   switchPlayer()
+      // } else if (row1[i].classList.contains('full')) {
+      //   row0[i].style.backgroundColor = `${currentPlayer}`
+      //   row0[i].id = 'full'
+      //   switchPlayer()
+      // }
 
-    // }
-  })
+      // if (currentPlayer === 1) {
+      //   row5[i].style.backgroundColor = 'red'
+      //   currentPlayer === 2
+      //   if (currentPlayer === 2) {
+      //     row5[i].style.backgroundColor = 'blue'
+      //     currentPlayer === 1
+      //   }
+
+      // }
+    })
+  }
 }
+logic()
+
 //}
 // const checkWin = ()=>{
 //   if(checkWin ){
@@ -133,12 +166,20 @@ const switchPlayer = () => {
   }
 }
 
-for (let i = 0; i < cells.length; i++) {
-  cells[i].addEventListener('click', function () {
-    console.log(topCells[i])
-    console.log(cells[i])
-  })
+const display = () => {
+  if ((currentPlayer = 1)) {
+    displayCurrentPlayers = displayCurrentPlayers.innerText = `Player 1's Turn`
+  } else if ((currentPlayer = 2)) {
+    displayCurrentPlayers = displayCurrentPlayers.innerText = `Player 2's Turn`
+  }
 }
+
+// for (let i = 0; i < cells.length; i++) {
+//   cells[i].addEventListener('click', function () {
+//     console.log(topCells[i])
+//     console.log(cells[i])
+//   })
+// }
 resetButton.addEventListener('click', function () {
   location.reload()
 })
