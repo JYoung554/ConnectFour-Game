@@ -14,7 +14,77 @@ resetButton.style.backgroundColor = 'red'
 /////////////////////////////////////////////////////////////////////
 const gameActive = false
 const gameWin = 0
-let gameState = ['', '', '', '', '', '', '', '', '']
+const winCombinations = [
+  [0, 1, 2, 3],
+  [1, 2, 3, 4],
+  [2, 3, 4, 5],
+  [3, 4, 5, 6],
+  [7, 8, 9, 10],
+  [8, 9, 10, 11],
+  [9, 10, 11, 12],
+  [10, 11, 12, 13],
+  [14, 15, 16, 17],
+  [15, 16, 17, 18],
+  [16, 17, 18, 19],
+  [17, 18, 19, 20],
+  [21, 22, 23, 24],
+  [22, 23, 24, 25],
+  [23, 24, 25, 26],
+  [24, 25, 26, 27],
+  [28, 29, 30, 31],
+  [29, 30, 31, 32],
+  [30, 31, 32, 33],
+  [31, 32, 33, 34],
+  [35, 36, 37, 38],
+  [36, 37, 38, 39],
+  [37, 38, 39, 40],
+  [38, 39, 40, 41] //HORIZONTAL WINS
+]
+
+let gameState = [
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+  ''
+]
 
 // currentPlayer = topCells[i]
 ///////////////////////////////////////////////////////////////
@@ -46,114 +116,74 @@ const row5 = document.querySelectorAll('.row-5')
 
 const columns = [column0, column1, column2, column3, column4, column5, column6]
 
+//row 0 starts at 0
+//row 1 starts at 7
+//row 2 starts at 14
+//row 3 starts at 21
+//row 4 starts at 28
+//row 5 starts at 35
+
+//position in game state is row+i
+
 ///////////////////////////////////////////////////////
 const logic = function () {
   for (let i = 0; i < topCells.length; i++) {
     topCells[i].addEventListener('click', function (c) {
-      // if(-7)
-      // if ()
       console.log(gameState)
-      //if bottomcells[i].style background = red ,continue to next line:
-      //
       if (!row5[i].classList.contains('full')) {
         row5[i].style.backgroundColor = `${currentPlayer}`
         console.log(row5[i].id)
-        gameState[row5[i].id] = currentPlayer
+        gameState[35 + i] = currentPlayer
         row5[i].classList.add('full')
         switchPlayer()
         return
       } else if (!row4[i].classList.contains('full')) {
         console.log('row4')
         row4[i].style.backgroundColor = `${currentPlayer}`
+        gameState[28 + i] = currentPlayer
         row4[i].classList.add('full')
         switchPlayer()
         return
       } else if (!row3[i].classList.contains('full')) {
         console.log('row3')
         row3[i].style.backgroundColor = `${currentPlayer}`
+        gameState[21 + i] = currentPlayer
         row3[i].classList.add('full')
         switchPlayer()
         return
       } else if (!row2[i].classList.contains('full')) {
         console.log('row2')
         row2[i].style.backgroundColor = `${currentPlayer}`
+        gameState[14 + i] = currentPlayer
         row2[i].classList.add('full')
         switchPlayer()
         return
       } else if (!row1[i].classList.contains('full')) {
         console.log('row1')
         row1[i].style.backgroundColor = `${currentPlayer}`
+        gameState[7 + i] = currentPlayer
         row1[i].classList.add('full')
         switchPlayer()
         return
       } else if (!row0[i].classList.contains('full')) {
         console.log('row0')
         row0[i].style.backgroundColor = `${currentPlayer}`
+        gameState[i] = currentPlayer
         row0[i].classList.add('full')
         switchPlayer()
         return
       }
 
-      // if (row4[i].classList.contains('full')) {
-      //   row4[i].style.backgroundColor = `${currentPlayer}`
-      //   row4[i].classList.add('full')
-      //   switchPlayer()
-      // } else if (row4[i].classList.contains('full')) {
-      //   row3[i].style.backgroundColor = `${currentPlayer}`
-      //   row3[i].classList.add('full')
-      //   switchPlayer()
-      // }
-
-      // if (row3[i].classList.contains('full')) {
-      //   row3[i].style.backgroundColor = `${currentPlayer}`
-      //   row3[i].classList.add('full')
-      //   switchPlayer()
-      // } else if (row3[i].classList.contains('full')) {
-      //   row2[i].style.backgroundColor = `${currentPlayer}`
-      //   row2[i].classList.add('full')
-      //   switchPlayer()
-      // }
-
-      // if (row2[i].classList.contains('full')) {
-      //   row2[i].style.backgroundColor = `${currentPlayer}`
-      //   row2[i].classList.add('full')
-      //   switchPlayer()
-      // } else if (row2[i].classList.contains('full')) {
-      //   row1[i].style.backgroundColor = `${currentPlayer}`
-      //   row1[i].classList.add('full')
-      //   switchPlayer()
-      // }
-
-      // if (row1[i].classList.contains('full')) {
-      //   row1[i].style.backgroundColor = `${currentPlayer}`
-      //   row1[i].id = 'full'
-      //   switchPlayer()
-      // } else if (row1[i].classList.contains('full')) {
-      //   row0[i].style.backgroundColor = `${currentPlayer}`
-      //   row0[i].id = 'full'
-      //   switchPlayer()
-      // }
-
-      // if (currentPlayer === 1) {
-      //   row5[i].style.backgroundColor = 'red'
-      //   currentPlayer === 2
-      //   if (currentPlayer === 2) {
-      //     row5[i].style.backgroundColor = 'blue'
-      //     currentPlayer === 1
-      //   }
-
-      // }
+      console.log(gameState)
     })
   }
 }
 logic()
 
-//}
-// const checkWin = ()=>{
-//   if(checkWin ){
+// const checkWin = () => {
+//   for (let i = 0; i < winCombos.length; i++) {
 
 //   }
-
 // }
 
 //if win condition includes
