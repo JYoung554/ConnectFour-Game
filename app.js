@@ -9,7 +9,6 @@ const resetButton = document.querySelector('.reset')
 const startGame = document.querySelector('.start')
 const homeButton = document.querySelector('.home')
 let currentPlayer = 'red'
-
 resetButton.style.backgroundColor = 'red'
 
 /////////////////////////////////////////////////////////////////////

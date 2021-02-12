@@ -1,13 +1,14 @@
-# General Assembly Project 1
-
-
 # Connect4!
 
-## Date: 2.12.2021
+![C4](C4Snap.png)
+
+### Date: 2.12.2021
 
 
-## By: Jonte' Fears
+### By: Jonte' Fears
+[Trello](https://trello.com/b/z7YWRiNW/project1) | [LinkedIn](https://www.linkedin.com/in/jonte-fears-a70070156/) | [GitHub](https://github.com/JYoung554)
 
+[Live Site](imported-parent.surge.sh)
 
 
 ***
@@ -15,16 +16,8 @@
 
 # Technologies Used
 * HTML
-
 * CSS
-
 * JavaScript
-
-
-***
-For Project 1 , we will be creating an interactive
-web-based game using JavaScript, HTML, and CSS.
-
 
 
 # Description
@@ -45,13 +38,7 @@ Player must select start button on screen. Game then initializes Player One and 
 
 # Credits
 
-HTML , CSS , and JavaScript implementation by **Jonte' Fears.**
-Design and animations by **Jonte' Fears.**
-
-
-Trello Board here : https://trello.com/b/z7YWRiNW/project1
-
-LinkedIn : https://www.linkedin.com/in/jonte-fears-a70070156/
+Background : https://www.svgbackgrounds.com/#quantum-gradient
 
 
 

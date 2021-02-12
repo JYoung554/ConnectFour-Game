@@ -141,3 +141,10 @@ ul li {
 ul {
   padding: 1em 5em;
 }
+
+footer {
+  display: flex;
+  justify-content: flex-end;
+  align-content: flex-end;
+  font-size: 0.5em;
+}
