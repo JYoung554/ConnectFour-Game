@@ -58,3 +58,11 @@
 .reset {
   border-radius: 20%;
 }
+
+.blue:hover {
+  background-color: blue;
+}
+
+.red:hover {
+  background-color: red;
+}
