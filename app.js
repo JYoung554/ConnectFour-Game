@@ -3,7 +3,7 @@ const displayCurrentPlayers = document.querySelector('.player')
 const grid = document.querySelectorAll('game-grid')
 const cells = document.querySelectorAll('.cell')
 const topCells = document.querySelectorAll('.drop')
-// const row0 = document.querySelectorAll('.bottom')
+
 const result = document.querySelector('result')
 const resetButton = document.querySelector('.reset')
 const startGame = document.querySelector('.start')
@@ -64,7 +64,7 @@ const winCombinations = [
   [14, 22, 30, 38],
   [7, 15, 23, 31],
   [15, 23, 31, 39],
-  [0, 8, 16, 24],
+  [0, 8, 16, 24], //DIAGONAL WINS
   [8, 16, 24, 32],
   [16, 24, 32, 40],
   [1, 9, 17, 25],
@@ -168,8 +168,6 @@ const columns = [column0, column1, column2, column3, column4, column5, column6]
 //row 4 starts at 28
 //row 5 starts at 35
 
-//position in game state is row+i
-
 ///////////////////////////////////////////////////////
 const logic = function () {
   gameActive = true
@@ -255,7 +253,6 @@ const checkWin = () => {
   console.log('blues: ', blues)
 
   for (let i = 0; i < winCombinations.length; i++) {
-    // console.log(...winCombinations[i])
     if (isMatch(reds, winCombinations[i])) {
       console.log('Red Wins!')
       gameActive = false
@@ -321,25 +318,3 @@ startGame.addEventListener('click', () => {
   logic()
   startGame.style.display = 'none'
 })
-
-// document.querySelector('.switch').addEventListener('click', switchPlayer)
-
-//if gameActive click on topcell , bottom will fill with player color and switch player,
-//and hold taken property. if all cells have taken property , game is over. if win combinations met , game is over.
-//
-
-////////////////////////////////////////////////
-//Add variable that tracks current player
-//Add variable for all possible win states, check state by indeces
-// Add click event listener to drop class
-//Add variable to store game state
-//Array = gameGrid.length
-
-/////////////////////////////////////////
-//When player clicks drop cell
-//Their move will go down to bottom of grid & recorded in game state
-//Check for win state (Horizontal , Vertical, and Diagonal)
-//If no win , switch to player 2
-//In case of Player 2 , toggle player class
-//Repeat steps until win/draw condition is met
-//Roughly 24 horizontal 21 vertical and 24 diagonal win conditions
