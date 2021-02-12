@@ -1,5 +1,4 @@
 const playerStyle = document.querySelector('.player')
-playerStyle.style.fontFamily = 'Helvetica, Arial, Sans-Serif'
 const displayCurrentPlayers = document.querySelector('.player')
 const grid = document.querySelectorAll('game-grid')
 const cells = document.querySelectorAll('.cell')
@@ -8,13 +7,14 @@ const topCells = document.querySelectorAll('.drop')
 const result = document.querySelector('result')
 const resetButton = document.querySelector('.reset')
 const startGame = document.querySelector('.start')
+const homeButton = document.querySelector('.home')
 let currentPlayer = 'red'
 
 resetButton.style.backgroundColor = 'red'
 
 /////////////////////////////////////////////////////////////////////
 let gameActive = false
-const gameWin = 0
+
 const winCombinations = [
   [0, 1, 2, 3],
   [1, 2, 3, 4],
@@ -132,7 +132,6 @@ let gameState = [
   ''
 ]
 
-// currentPlayer = topCells[i]
 ///////////////////////////////////////////////////////////////
 
 const dropRow = [
@@ -174,7 +173,9 @@ const columns = [column0, column1, column2, column3, column4, column5, column6]
 ///////////////////////////////////////////////////////
 const logic = function () {
   gameActive = true
-  displayCurrentPlayers.innerText = `${currentPlayer}'s turn`
+  displayCurrentPlayers.innerText = `${
+    currentPlayer.charAt(0).toUpperCase() + currentPlayer.slice(1)
+  }'s turn`
   for (let i = 0; i < topCells.length; i++) {
     topCells[i].addEventListener('click', addLogic)
   }
@@ -265,10 +266,19 @@ const checkWin = () => {
       gameActive = false
     }
   }
+  if (reds.length === 21 && blues.length === 21) {
+    displayCurrentPlayers.innerText = 'Tie Game!'
+    gameActive === false
+    removeLogic()
+    return
+  }
+
   if (gameActive) {
     switchPlayer()
   } else {
-    displayCurrentPlayers.innerText = `${currentPlayer} Wins!`
+    displayCurrentPlayers.innerText = `${
+      currentPlayer.charAt(0).toUpperCase() + currentPlayer.slice(1)
+    } Wins!`
     removeLogic()
   }
 }
@@ -280,7 +290,9 @@ const switchPlayer = () => {
   } else {
     currentPlayer = 'red'
   }
-  displayCurrentPlayers.innerText = `${currentPlayer}'s turn`
+  displayCurrentPlayers.innerText = `${
+    currentPlayer.charAt(0).toUpperCase() + currentPlayer.slice(1)
+  }'s turn`
   topCells.forEach((cell) => cell.classList.add(currentPlayer))
 }
 

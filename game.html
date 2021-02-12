@@ -5,9 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ConnectFour!</title>
   <link rel='stylesheet' href='style.css'></link>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
   
 </head>
 <body>
+  <div class ='reset1'>
+    <button class='start'>Start Game</button>
+    <button class='reset'>Restart?</button>
+    <button class ='home'><a href="index.html">Home</a></button>
+    <!-- <button class='switch'>Switch Player</button> -->
+    <h4 id='result'></h4>
+  </div>
   <h4 class='player'></h4>
   <div class = "play-area">
    <div class ="move">
@@ -21,6 +30,7 @@
      <div class = "drop" id ='6'></div>
    </div>
 
+   <div class="grid-back">
     <div class ='game-grid'>
       <div class = "cell 1 row-0 col-0"></div>
       <div class = "cell 2 row-0 col-1"></div>
@@ -64,17 +74,10 @@
       <div class ="cell row-5 bottom 40 col-4"></div>
       <div class ="cell row-5 bottom 41 col-5"></div>
       <div class ="cell row-5 bottom 42 col-6"></div>
+    </div>
 
     </div>
   </div>
-
-  <div class ='reset1'>
-    <button class='start'>Start Game</button>
-    <button class='reset'>Restart?</button>
-    <!-- <button class='switch'>Switch Player</button> -->
-    <h4 id='result'></h4>
-  </div>
-
-  <script type ='text/javascript' src='app.js'></script>
+<script type ='text/javascript' src='app.js'></script>
 </body>
 </html>
