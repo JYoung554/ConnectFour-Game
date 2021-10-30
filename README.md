@@ -2,7 +2,6 @@
 
 ![C4](C4Snap.png)
 
-### Date: 2.12.2021
 
 
 ### By: Jonte' Fears
