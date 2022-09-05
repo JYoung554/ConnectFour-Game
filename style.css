@@ -6,6 +6,7 @@
     justify-content: center;
     align-content: center;
     margin: auto;
+    width: 1080px;
     text-shadow: 2px 2px 2px #2b2b2b;
     max-width:720px;
   };
@@ -17,6 +18,7 @@
     justify-content: center;
     align-content: center;
     margin: auto;
+    width: 1080px;
     text-shadow: 2px 2px 2px #2b2b2b;
     max-width:720px;
   };
@@ -133,6 +135,7 @@ body {
   box-shadow: 0 0 10px white;
   background: radial-gradient(#ffec41, gray);
   border: 2px solid black;
+  -webkit-tap-highlight-color: transparent;
   z-index:4;
 }
 
