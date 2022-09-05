@@ -11,6 +11,8 @@ const homeButton = document.querySelector('.home')
 let currentPlayer = 'red'
 resetButton.style.backgroundColor = 'red'
 
+topCells.forEach((cell) => (cell.style.backgroundColor = 'gray'))
+
 /////////////////////////////////////////////////////////////////////
 let gameActive = false
 
@@ -173,6 +175,7 @@ const logic = function () {
   displayCurrentPlayers.innerText = `${
     currentPlayer.charAt(0).toUpperCase() + currentPlayer.slice(1)
   }'s turn`
+
   for (let i = 0; i < topCells.length; i++) {
     topCells[i].addEventListener('click', addLogic)
   }

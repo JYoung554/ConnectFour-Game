@@ -3,7 +3,7 @@ body {
   justify-content: center;
   align-content: center;
   background-color: #ff0000;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1200 800'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='600' y1='25' x2='600' y2='777'%3E%3Cstop offset='0' stop-color='%23ff0000'/%3E%3Cstop offset='1' stop-color='%23E0F'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='650' y1='25' x2='650' y2='777'%3E%3Cstop offset='0' stop-color='%23ff0019'/%3E%3Cstop offset='1' stop-color='%23ce00f3'/%3E%3C/linearGradient%3E%3ClinearGradient id='c' gradientUnits='userSpaceOnUse' x1='700' y1='25' x2='700' y2='777'%3E%3Cstop offset='0' stop-color='%23ff0031'/%3E%3Cstop offset='1' stop-color='%23b000e6'/%3E%3C/linearGradient%3E%3ClinearGradient id='d' gradientUnits='userSpaceOnUse' x1='750' y1='25' x2='750' y2='777'%3E%3Cstop offset='0' stop-color='%23ff004a'/%3E%3Cstop offset='1' stop-color='%239400da'/%3E%3C/linearGradient%3E%3ClinearGradient id='e' gradientUnits='userSpaceOnUse' x1='800' y1='25' x2='800' y2='777'%3E%3Cstop offset='0' stop-color='%23ff0063'/%3E%3Cstop offset='1' stop-color='%237a00ce'/%3E%3C/linearGradient%3E%3ClinearGradient id='f' gradientUnits='userSpaceOnUse' x1='850' y1='25' x2='850' y2='777'%3E%3Cstop offset='0' stop-color='%23ff007c'/%3E%3Cstop offset='1' stop-color='%236200c1'/%3E%3C/linearGradient%3E%3ClinearGradient id='g' gradientUnits='userSpaceOnUse' x1='900' y1='25' x2='900' y2='777'%3E%3Cstop offset='0' stop-color='%23ff0094'/%3E%3Cstop offset='1' stop-color='%234d00b5'/%3E%3C/linearGradient%3E%3ClinearGradient id='h' gradientUnits='userSpaceOnUse' x1='950' y1='25' x2='950' y2='777'%3E%3Cstop offset='0' stop-color='%23ff00ad'/%3E%3Cstop offset='1' stop-color='%233900a8'/%3E%3C/linearGradient%3E%3ClinearGradient id='i' gradientUnits='userSpaceOnUse' x1='1000' y1='25' x2='1000' y2='777'%3E%3Cstop offset='0' stop-color='%23ff00c6'/%3E%3Cstop offset='1' stop-color='%2328009c'/%3E%3C/linearGradient%3E%3ClinearGradient id='j' gradientUnits='userSpaceOnUse' x1='1050' y1='25' x2='1050' y2='777'%3E%3Cstop offset='0' stop-color='%23ff00df'/%3E%3Cstop offset='1' stop-color='%23180090'/%3E%3C/linearGradient%3E%3ClinearGradient id='k' gradientUnits='userSpaceOnUse' x1='1100' y1='25' x2='1100' y2='777'%3E%3Cstop offset='0' stop-color='%23ff00f7'/%3E%3Cstop offset='1' stop-color='%230b0083'/%3E%3C/linearGradient%3E%3ClinearGradient id='l' gradientUnits='userSpaceOnUse' x1='1150' y1='25' x2='1150' y2='777'%3E%3Cstop offset='0' stop-color='%23E0F'/%3E%3Cstop offset='1' stop-color='%23007'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg %3E%3Crect fill='url(%23a)' width='1200' height='800'/%3E%3Crect fill='url(%23b)' x='100' width='1100' height='800'/%3E%3Crect fill='url(%23c)' x='200' width='1000' height='800'/%3E%3Crect fill='url(%23d)' x='300' width='900' height='800'/%3E%3Crect fill='url(%23e)' x='400' width='800' height='800'/%3E%3Crect fill='url(%23f)' x='500' width='700' height='800'/%3E%3Crect fill='url(%23g)' x='600' width='600' height='800'/%3E%3Crect fill='url(%23h)' x='700' width='500' height='800'/%3E%3Crect fill='url(%23i)' x='800' width='400' height='800'/%3E%3Crect fill='url(%23j)' x='900' width='300' height='800'/%3E%3Crect fill='url(%23k)' x='1000' width='200' height='800'/%3E%3Crect fill='url(%23l)' x='1100' width='100' height='800'/%3E%3C/g%3E%3C/svg%3E");
+  background-image: repeating-linear-gradient(red, purple);
   background-attachment: fixed;
   background-size: cover;
   font-family: 'Fredoka One', cursive;
@@ -14,6 +14,7 @@ body {
   font-size: 5em;
   text-shadow: 0 0 5px white;
   text-align: center;
+  color: white;
 }
 
 .play {
@@ -33,7 +34,29 @@ body {
   font-size: 3em;
   margin-bottom: 0;
   text-shadow: 0 0 5px black;
+  z-index:9;
 }
+
+.mask{
+  display:grid;
+  position:absolute; 
+  justify-content:center;
+  align-content:center;
+  top:0;
+  height:255px;
+  width:800px;
+  background-color: #ff0000;
+  background-image: repeating-linear-gradient( #ff0000
+  , #eb053b);
+  z-index:3;
+  border-radius:30px;
+  
+}
+
+.cell{
+  z-index:3;
+}
+
 
 .description {
   text-align: center;
@@ -48,11 +71,12 @@ body {
 .game-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  margin: 0 auto 2em auto;
+  margin: 20px auto 2em auto;
   height: 600px;
-  background: linear-gradient(rgb(52, 113, 204), black);
+  background: linear-gradient(rgb(52, 113, 204), rgb(14, 30, 55));
   border-radius: 10%;
   padding: 1.2em;
+  z-index:4;
 }
 
 .player1:hover {
@@ -62,6 +86,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   padding: 0 1.2em;
+  margin: 0 auto 10px auto;
 }
 
 .drop {
@@ -73,6 +98,10 @@ body {
   border: 20px;
   border-color: black;
   opacity: 1;
+  box-shadow: 0 0 10px white;
+  background: radial-gradient(#ffec41, gray);
+  border: 2px solid black;
+  z-index:4;
 }
 
 /* .grid-back {
@@ -90,19 +119,40 @@ body {
   border: 20px;
   border-color: black;
   box-shadow: inset 0 0 5px black;
+  z-index:2;
 }
 
 .reset1 {
   display: flex;
   justify-content: center;
   margin-top: 50px;
+  color: white;
 }
 
 .buttons {
   margin: 0 20px 0 20px;
-  border-radius: 28px;
+  border-radius: 50%;
   background-image: linear-gradient(to bottom, #949deb, #b02079);
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  color: white;
+  font-family: 'Fredoka One', cursive;
+  font-size: 0.9em;
+  text-shadow: 0 0 5px white;
+  text-align: center;
+  height: 90px;
+  width: 90px;
+  padding: 0;
+  outline-offset: 5px;
+  box-sizing: border-box;
+  text-align: center;
+  cursor: pointer;
+  font-weight: bold;
+  border: none;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-tap-highlight-color: transparent;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 14px 0 rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.1);
+  z-index:9;
 }
 
 /* .reset {
@@ -113,25 +163,44 @@ body {
   box-shadow: 0 0 20px white;
   background: radial-gradient(cyan, rgb(0, 0, 255));
   border: 2px solid black;
+  transform: translateY(-2px);
+}
+
+.full {
+  -webkit-transition-property: 0.5;
+  transition-delay: 0.5;
+  transition: 0.3 0s all linear;
+  animation: blue-drop 0.5s linear forwards;
+  animation-duration: 700ms;
+  animation-fill-mode: forwards;
 }
 
 .red:hover {
   background-color: red;
-  box-shadow: 0 0 20px white;
+  box-shadow: 0 0 10px white;
   background: radial-gradient(red, rgb(95, 10, 27));
   border: 2px solid black;
+  transform: translateY(-2px);
+}
+
+.buttons {
+  color: white;
+}
+
+.grid-back {
+  margin: 10px auto 10px auto;
+  z-index:4;
 }
 
 .home {
-  width: 100px;
-  background: cornflowerblue;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   background-image: linear-gradient(to bottom, #949deb, #b02079);
   text-align: center;
+  color: white;
 }
 
 .home:hover {
-  background-color: dodgerblue;
+  background-color: white;
 }
 
 ul li {
@@ -147,4 +216,26 @@ footer {
   justify-content: flex-end;
   align-content: flex-end;
   font-size: 0.5em;
+}
+
+@keyframes blue-drop {
+  from {
+    transform: translateY(-550px);
+  }
+  to {
+    transform: translateY(0);
+    z-index:1;
+  }
+  
+}
+
+
+@keyframes cell {
+  from {
+    transition:background-color 2s ease-out ;
+  }
+  to {
+    transition:background-color none ;
+    z-index:1;
+  }
 }
