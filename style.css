@@ -211,6 +211,10 @@ ul {
   padding: 1em 5em;
 }
 
+.emphasize {
+color:azure;
+}
+
 footer {
   display: flex;
   justify-content: flex-end;
