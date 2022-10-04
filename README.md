@@ -6,7 +6,7 @@
 
 [Trello](https://trello.com/b/z7YWRiNW/project1) | [LinkedIn](https://www.linkedin.com/in/jonte-fears-a70070156/) | [GitHub](https://github.com/JYoung554)
 
-[Live Site](https://certain-pollution.surge.sh/)
+[Live Site](https://connectFourByJonteFears.surge.sh/)
 
 ---
 
