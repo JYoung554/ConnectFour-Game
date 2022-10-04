@@ -13,6 +13,18 @@ resetButton.style.backgroundColor = 'red'
 
 topCells.forEach((cell) => (cell.style.backgroundColor = 'gray'))
 
+window.onresize = function () {
+  let box = document.getElementById('size')
+  const minSize = 0.5
+  const maxSize = 1
+  let scale = Math.min(
+    window.innerWidth / (box.offsetWidth + 8),
+    window.innerHeight / (box.offsetHeight + 8)
+  )
+  scale = Math.min(maxSize, Math.max(minSize, scale))
+  document.documentElement.style.setProperty('--pageScale', scale)
+}
+
 /////////////////////////////////////////////////////////////////////
 let gameActive = false
 
